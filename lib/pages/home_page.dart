@@ -13,6 +13,7 @@ import '../models/table_data.dart';
 import '../utils/http_utils.dart';
 import '../utils/build_context_ext.dart';
 import 'category_page.dart';
+import 'paying_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -280,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         tableData,
                       );
 
-                      tableData.orderData!.itemDatas.clear();
+                      // tableData.orderData!.itemDatas.clear();
 
                       isAlertLoading = false;
                       setState(() {});
@@ -305,7 +306,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: const EdgeInsets.only(left: 5),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pop(true);
+                    // Navigator.of(context).pop(true);
+                    context.push(const PayingPage());
                     tableData.orderData = null;
                   },
                   child: const Text(
